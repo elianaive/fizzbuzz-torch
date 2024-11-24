@@ -38,7 +38,6 @@ class ResidualBlock(nn.Module):
             )
             
     def forward(self, x):
-        # Add shape checking
         orig_shape = x.shape
         out = self.block(x)
         assert out.shape == orig_shape, f"Shape mismatch in ResidualBlock: input {orig_shape}, output {out.shape}"
